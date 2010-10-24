@@ -1,4 +1,5 @@
 require 'awesome_tables'
+require 'awesome_tables/awesome_table'
 
 module AwesomTables
   class Railtie < Rails::Railtie

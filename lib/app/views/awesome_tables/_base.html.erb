@@ -1,0 +1,35 @@
+<table>
+  <% if table.caption? %>
+    <caption class="medium_round_top"><%= table.caption %></caption>
+  <% end %>
+  <tr>
+    <% table.columns.each do |column| %>
+      <th<%= " class=#{column[:class]}" unless column[:class].blank? %>><%= column[:image].blank? ? column[:header] : image_tag(column[:image]) %></th>
+    <% end %>
+  </tr>
+  <% if table.data.blank? %>
+    <tr><td colspan="<%= table.columns.size %>">0 results</td></tr>
+  <% else %>
+    <% table.data.each do |object| %>
+      <tr>
+        <% table.columns.each do |column| %>
+          <td<%= " class=#{column[:class]}" unless column[:class].blank? %>>
+            <% if object.respond_to?(column[:method]) %>
+                <%= object.send(column[:method]) %>
+            <% else %>
+              <%= render :partial => column[:method], :locals => { :obj => object } %>
+            <% end %>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+    <% if table.paginate? %>
+      <tr>
+        <td class="pagination_links" colspan="<%= table.columns.size %>">
+          <div class="pagination_info"><%= page_entries_info table.data %></div>
+          <%= will_paginate table.data %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

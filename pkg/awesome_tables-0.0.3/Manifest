@@ -1,9 +1,0 @@
-MIT-LICENSE
-Manifest
-README
-Rakefile
-lib/awesome_tables.rb
-lib/awesome_tables/railtie.rb
-lib/awesome_tables/view_helpers/action_view.rb
-test/awesome_tables_test.rb
-test/test_helper.rb
