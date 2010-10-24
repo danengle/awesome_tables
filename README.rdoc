@@ -2,6 +2,8 @@
 
 This rails gem is used to easily display, consistently styled tables. It is still very much a work in progress.
 
+Installation is simple.
+  gem install awesome_tables
 
 = Example
 
