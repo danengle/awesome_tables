@@ -2,6 +2,8 @@ MIT-LICENSE
 Manifest
 README
 Rakefile
+awesome_tables.gemspec
+lib/app/views/awesome_tables/_base.html.erb
 lib/awesome_tables.rb
 lib/awesome_tables/awesome_table.rb
 lib/awesome_tables/formatters.rb

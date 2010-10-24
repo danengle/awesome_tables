@@ -2,12 +2,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{awesome_tables}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Dan Engle"]
   s.cert_chain = ["/Users/danengle/.ssh/gem-public_cert.pem"]
-  s.date = %q{2010-10-14}
+  s.date = %q{2010-10-24}
   s.description = %q{A gem for some awesome tables}
   s.email = %q{engle.68 @nospam@ gmail.com}
   s.extra_rdoc_files = ["README", "lib/awesome_tables.rb", "lib/awesome_tables/awesome_table.rb", "lib/awesome_tables/formatters.rb", "lib/awesome_tables/formatters/html.rb", "lib/awesome_tables/railtie.rb", "lib/awesome_tables/scrap.rb", "lib/awesome_tables/view_helpers/action_view.rb"]
