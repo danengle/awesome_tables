@@ -4,6 +4,8 @@ This rails gem is used to easily display, consistently styled tables. It is stil
 
 Installation is simple.
   gem install awesome_tables
+  # copy the base template to app/views/awesome_tables/_base.html.erb
+  rails g awesome_tables
 
 = Example
 
@@ -43,7 +45,6 @@ You'll need to make sure that you create an awesome tables view folder. There is
 
 = TODO
 
-* create a generator that creates awesome_tables view folder and copies a base table into it.
 * tests, tests, tests
 * allow use of helpers in column calls
 * figure out how to change the templates so that they don't have column loops inside of the object loop

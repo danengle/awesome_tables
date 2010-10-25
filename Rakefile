@@ -2,8 +2,8 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('awesome_tables', '0.0.4') do |p|
-  p.description    = "A gem for some awesome tables"
+Echoe.new('awesome_tables', '0.0.5') do |p|
+  p.description    = "A gem for creating awesome, consistently styled tables"
   p.url            = "http://github.com/danengle/awesome_tables"
   p.author         = "Dan Engle"
   p.email          = "engle.68 @nospam@ gmail.com"

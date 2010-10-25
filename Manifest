@@ -1,8 +1,9 @@
+CHANGELOG.rdoc
 MIT-LICENSE
 Manifest
-README
+README.rdoc
 Rakefile
-lib/app/views/awesome_tables/_base.html.erb
+awesome_tables.gemspec
 lib/awesome_tables.rb
 lib/awesome_tables/awesome_table.rb
 lib/awesome_tables/formatters.rb
@@ -10,5 +11,7 @@ lib/awesome_tables/formatters/html.rb
 lib/awesome_tables/railtie.rb
 lib/awesome_tables/scrap.rb
 lib/awesome_tables/view_helpers/action_view.rb
+lib/generators/awesome_tables_generator.rb
+lib/generators/templates/_base.html.erb
 test/awesome_tables_test.rb
 test/test_helper.rb
