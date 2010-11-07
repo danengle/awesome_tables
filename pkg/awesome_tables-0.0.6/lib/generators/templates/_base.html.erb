@@ -1,0 +1,19 @@
+<table class="awesome_tables add_margin">
+  <% if table.caption? %>
+    <caption><%= table.caption %></caption>
+  <% end %>
+  <%= table_headers(table) %>
+  <% if table.collection.blank? %>
+    <tr><td colspan="<%= table.columns.size %>">0 results</td></tr>
+  <% else %>
+    <%= table_rows(table) %>
+    <% if table.paginate? %>
+      <tr>
+        <td class="pagination_links" colspan="<%= table.columns.size %>">
+          <div class="pagination_info"><%= page_entries_info table.collection %></div>
+          <%= will_paginate table.collection %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
