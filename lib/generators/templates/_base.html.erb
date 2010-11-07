@@ -1,23 +1,17 @@
-<table>
+<table class="awesome_tables add_margin">
   <% if table.caption? %>
     <caption><%= table.caption %></caption>
   <% end %>
-  <tr>
-    <% table.columns.each do |column| %>
-      <%= table_header(column) %>
-    <% end %>
-  </tr>
-  <% if table.data.blank? %>
+  <%= table_headers(table) %>
+  <% if table.collection.blank? %>
     <tr><td colspan="<%= table.columns.size %>">0 results</td></tr>
   <% else %>
-    <% table.data.each do |object| %>
-      <%= table_row(object, table.columns) %>
-    <% end %>
+    <%= table_rows(table) %>
     <% if table.paginate? %>
       <tr>
         <td class="pagination_links" colspan="<%= table.columns.size %>">
-          <div class="pagination_info"><%= page_entries_info table.data %></div>
-          <%= will_paginate table.data %>
+          <div class="pagination_info"><%= page_entries_info table.collection %></div>
+          <%= will_paginate table.collection %>
         </td>
       </tr>
     <% end %>
