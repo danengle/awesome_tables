@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.date = %q{2010-10-24}
   s.description = %q{A gem for creating awesome, consistently styled tables}
   s.email = %q{engle.68 @nospam@ gmail.com}
-  s.extra_rdoc_files = ["README", "lib/app/views/awesome_tables/_base.html.erb", "lib/awesome_tables.rb", "lib/awesome_tables/awesome_table.rb", "lib/awesome_tables/formatters.rb", "lib/awesome_tables/formatters/html.rb", "lib/awesome_tables/railtie.rb", "lib/awesome_tables/scrap.rb", "lib/awesome_tables/view_helpers/action_view.rb"]
-  s.files = ["MIT-LICENSE", "Manifest", "README", "Rakefile", "lib/app/views/awesome_tables/_base.html.erb", "lib/awesome_tables.rb", "lib/awesome_tables/awesome_table.rb", "lib/awesome_tables/formatters.rb", "lib/awesome_tables/formatters/html.rb", "lib/awesome_tables/railtie.rb", "lib/awesome_tables/scrap.rb", "lib/awesome_tables/view_helpers/action_view.rb", "test/awesome_tables_test.rb", "test/test_helper.rb", "awesome_tables.gemspec"]
+  s.extra_rdoc_files = ["CHANGELOG.rdoc", "README.rdoc", "lib/awesome_tables.rb", "lib/awesome_tables/awesome_table.rb", "lib/awesome_tables/formatters.rb", "lib/awesome_tables/formatters/html.rb", "lib/awesome_tables/railtie.rb", "lib/awesome_tables/scrap.rb", "lib/awesome_tables/view_helpers/action_view.rb", "lib/generators/awesome_tables_generator.rb", "lib/generators/templates/_base.html.erb"]
+  s.files = ["CHANGELOG.rdoc", "MIT-LICENSE", "Manifest", "README.rdoc", "Rakefile", "awesome_tables.gemspec", "lib/awesome_tables.rb", "lib/awesome_tables/awesome_table.rb", "lib/awesome_tables/formatters.rb", "lib/awesome_tables/formatters/html.rb", "lib/awesome_tables/railtie.rb", "lib/awesome_tables/scrap.rb", "lib/awesome_tables/view_helpers/action_view.rb", "lib/generators/awesome_tables_generator.rb", "lib/generators/templates/_base.html.erb", "test/awesome_tables_test.rb", "test/test_helper.rb"]
   s.homepage = %q{http://github.com/danengle/awesome_tables}
   s.rdoc_options = ["--line-numbers", "--inline-source", "--title", "Awesome_tables", "--main", "README.rdoc"]
   s.require_paths = ["lib"]
