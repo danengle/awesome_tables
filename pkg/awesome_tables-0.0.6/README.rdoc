@@ -11,14 +11,14 @@ Installation is simple.
 
 In order to use an awesome_table, first you must register it in a helper. Two examples are below.
 
-  AwesomeTables::AwesomeTable::register :posts do |t|
+  AwesomeTables.register :posts do |t|
     t.set_caption "Posts"
     t.column :published_at, :display_published_at
     t.column :post, :partial => 'awesome_tables/posts/body'
-    t.column :comment_count, :comment_counter, :with_image => 'comment-grey-bubble.png'
+    t.column :comment_count, :comment_counter, :header_image => 'comment-grey-bubble.png'
   end
   
-  AwesomeTables::AwesomeTable::register :users do |t|
+  AwesomeTables.register :users do |t|
     t.set_caption "Users"
     t.column :full_name
     t.column :login
@@ -31,25 +31,27 @@ Now you can use them in your views
   <%= awesome_table :users, @users %>
   <%= awesome_table :posts, @posts %>
 
-There are currently 3 different ways to declare a column.
+There are currently 4 different ways to declare a column.
 1. t.column(:method) A plain td can be created by passing in an object attribute. The header will be a titlized version of the method name.
 2. t.column(:header_text, :method) If you want the header text to be different than the method. 
 3. t.column(:header_text, :partial => 'path/to/partial) If your td data is more complex than a method name, add a partial option.
+4. You can pass a block to the call to column. I couldn't figure out how to get rails helpers to call correctly when defined inside the block so 'c' is a reference to allow you to use view helpers
+	t.column :full_name do |obj, c|
+		obj.full_name +
+  	c.content_tag(:div, :class => 'actions') do
+    	c.link_to("Edit", c.edit_admin_user_path(obj))
+  	end
+	end
 
-Eventually, I want to be able to create columns that use view_helpers, but I haven't spent enough time investigating how to get that working.
-4. t.column(:header_text, link_to(obj.name, obj))
-
-The :with_image option will use the image as the column header instead header text. That code and the way it is used needs some attention. Things have changed a little bit since I put that in there.
+The :header_image option will use the image as the column header instead header text. That code and the way it is used needs some attention. Things have changed a little bit since I put that in there.
 
 You'll need to make sure that you create an awesome tables view folder. There is a base example table contained in lib/app/views/awesome_tables.
 
 = TODO
 
 * tests, tests, tests
-* allow use of helpers in column calls
 * figure out how to change the templates so that they don't have column loops inside of the object loop
-* add more and better options support. Currently there is only a :class (and :with_image) option for columns and the way the :class option is implemented looks nasty.
-* have awesome_tables infer objects the way will_paginate does. That was working, I changed it for some reason to work around something that I can't currently remember.
+* add more and better options support. Currently there is only a :class (and :header_image) option for columns and the way the :class option is implemented looks nasty.
 * create different formatters so awesome_tables can be used to output tables in formats other than html tables.
 
 Copyright (c) 2010 Dan Engle, released under the MIT license
